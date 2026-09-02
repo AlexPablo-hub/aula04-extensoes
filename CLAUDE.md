@@ -1,4 +1,4 @@
-# AGENTS.md
+# CLAUDE.md
 
 Laboratório da Aula 04 (MCPs, Skills e Subagentes) da disciplina Tópicos Especiais
 em Programação. Três extensões de agente sobre o diário de notas de uma turma — o
@@ -9,11 +9,12 @@ mesmo domínio das Aulas 02 e 03.
 - `servidor.py` — servidor MCP `diario`: as ferramentas `listar_alunos`,
   `boletim`, `lancar_nota`, `resumo_turma` e o recurso `diario://regras`.
 - `dados/turma.csv` — notas da turma (dados fictícios). N1 e N2 peso 3, N3 peso 4.
-- `opencode.json` — registro do servidor no bloco `mcp`. O `cwd` é absoluto e
-  específico da máquina; ajuste ao clonar.
-- `.opencode/skills/relatorio-de-atividade/` — Skill que fecha a entrega. Acione-a
+- `.mcp.json` — registro do servidor. Caminhos relativos (`.venv/Scripts/...`,
+  `servidor.py`), resolvidos a partir da raiz do projeto — funciona em qualquer
+  clone sem editar nada. Assume `.venv` no layout Windows.
+- `.claude/skills/relatorio-de-atividade/` — Skill que fecha a entrega. Acione-a
   ("escreve o relatório desta atividade") em vez de reescrever o procedimento.
-- `.opencode/agents/auditor-de-contexto.md` — subagente que audita este arquivo.
+- `.claude/agents/auditor-de-contexto.md` — subagente que audita este arquivo.
 - `medicao.md` — resultado do experimento da seção 5.5 (economia de contexto do
   subagente). Abra só se for refazer ou citar a medição.
 
@@ -26,9 +27,9 @@ mesmo domínio das Aulas 02 e 03.
 
 - `mcp dev servidor.py` — testa o servidor no MCP Inspector, sem agente.
 - `python -m pytest -q` — a suíte de testes.
-- Em uso normal, quem inicia o servidor é o host, pela config do `opencode.json`.
-  Para depurar, rode `python servidor.py` à mão e leia o traceback (ele fica
-  parado à espera de stdin — isso é o esperado).
+- Em uso normal, quem inicia o servidor é o Claude Code, pela config do `.mcp.json`
+  (`claude mcp list` mostra `diario`). Para depurar, rode `python servidor.py` à
+  mão e leia o traceback (ele fica parado à espera de stdin — isso é o esperado).
 
 ## Convenções do domínio
 

@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "diario": {
+      "command": ".venv/Scripts/python.exe",
+      "args": ["servidor.py"],
+      "env": {}
+    }
+  }
+}

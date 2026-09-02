@@ -3,3 +3,6 @@
 __pycache__/
 *.pyc
 .pytest_cache/
+
+# config pessoal do Claude Code (a skill e o subagente do projeto ficam versionados)
+.claude/settings.local.json
